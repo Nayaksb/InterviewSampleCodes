@@ -1,2 +1,2 @@
-# InterviewSampleCodes
-This code base to help the candidates, so that best candidates can best opportunities.
+# Interview Sample Codes
+This code base to help the candidates, so that best candidates can get best opportunities.
