@@ -1,25 +1,24 @@
 import UIKit
 
+print(ValidBracket().inValid("{}()[]") ? "Valid bracket pair." : "Not valid bracket pair.")
+
 class ValidBracket {
     var stack = StackArray()
     let validDict = ["{":"}", "(":")", "[":"]"]
     func inValid(_ S: String) -> Bool {
-       
-        
         if S.count <= 1{
-            
             return false
         }
         var i = 0
         for char in S {
-            print("\(char)  ---")
-        }
-        for char in S {
-            print("\(i) --- > \(char)")
+            if ((char == "}") || (char == ")") || (char == "]")) && stack.isEmpty(){
+                return false
+            }
             if (char == "{") || (char == "(") || (char == "["){
                 stack.push(String(char))
-            }else if (char == "}") || (char == ")") || (char == "]"){
+            }else if ((char == "}") || (char == ")") || (char == "]")){
                 if let last = stack.peek(){
+                    
                     if let validClosing = validDict[last] {
                         if validClosing == String(char){
                             stack.pop()
@@ -32,17 +31,15 @@ class ValidBracket {
                     stack.push(String(char))
                 }
             }
-            print("Done execution")
             i = i + 1
         }
-        if stack.isEmpty(){
+        if stack.isEmpty() && i % 2 == 0{
+            return true
+        }else{
             return false
         }
-        
-        return false
     }
 }
-print(ValidBracket().inValid("{}()[]"))
 
 
 
@@ -65,6 +62,3 @@ struct StackArray {
         return (items.last != nil) ? false : true
     }
 }
-
-
-
