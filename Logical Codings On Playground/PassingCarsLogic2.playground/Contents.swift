@@ -5,7 +5,7 @@ import UIKit
 
 
 var passingCarCase1 = [">", "<", "<", ">", ">"]
-print(passingCarstoN(drivingCars: passingCarCase1))
+//print(passingCarstoN(drivingCars: passingCarCase1))
 
 var passingCarCase2 = [">", "<", ">", ">", "<"]
 print(passingCarstoN(drivingCars: passingCarCase2))
@@ -18,6 +18,7 @@ func passingCarstoN(drivingCars: [String]) -> Int{
         if drivingCars[i] == ">" {
             for j in i..<numOfCars {
                 if drivingCars[j] == "<"{
+                    print("(\(i), \(j))")
                     passingCars = passingCars + 1
                 }
             }
