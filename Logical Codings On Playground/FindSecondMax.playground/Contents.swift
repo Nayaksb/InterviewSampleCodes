@@ -17,3 +17,10 @@ func findSecondMax(arr: [Int]) -> Int {
 }
 
 findSecondMax(arr: array)
+
+let n = 2
+let nthValue = array.sorted{$0 > $1}
+print(nthValue[n - 1])
+
+
+

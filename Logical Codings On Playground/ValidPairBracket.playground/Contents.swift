@@ -1,10 +1,11 @@
 import UIKit
 
-print(ValidBracket().inValid("{}()[]") ? "Valid bracket pair." : "Not valid bracket pair.")
+print(ValidBracket().inValid("{{}()[]}") ? "Valid bracket pair." : "Not valid bracket pair.")
 
 class ValidBracket {
     var stack = StackArray()
     let validDict = ["{":"}", "(":")", "[":"]"]
+    
     func inValid(_ S: String) -> Bool {
         if S.count <= 1{
             return false

@@ -1,6 +1,33 @@
 import UIKit
 
-var number = 12321
+let stringValue = "repaper"
+var reversedString = ""
+
+//Read the array from backwards to get the characters
+
+// looping through each character
+for char in stringValue {
+    reversedString = "\(char)" + reversedString
+}
+if reversedString == stringValue {
+
+    print("\(stringValue) is a Palindrome!")
+}else{
+    print("\(stringValue) is not a Palindrome!")
+}
+
+// For sentence or char array
+var result = String(stringValue.reversed())
+print(result)
+if result == stringValue {
+
+    print("\(number) is a Palindrome!")
+}else{
+    print("\(number) is not a Palindrome!")
+}
+
+//For numeric value
+let number = 12321
 
 func checkPalindrom(num: Int) -> Bool{
     if num < 0 {
@@ -18,4 +45,8 @@ func checkPalindrom(num: Int) -> Bool{
     return num == reversedNum
 }
 
-checkPalindrom(num: number)
+if checkPalindrom(num: number){
+    print("\(number) is a Palindrome!")
+}else{
+    print("\(number) is not a Palindrome!")
+}
