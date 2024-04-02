@@ -1,9 +1,9 @@
 import UIKit
 import Foundation
 
-let array = [2, 4, 5, 7, 9, 8, 1]
+let array = [2, 4, 5]
 
-func findSecondMax(arr: [Int]) -> Int {
+func findNthMax(arr: [Int]) -> Int {
     var first = 0, second = 0
     
     for item in array {
@@ -16,11 +16,19 @@ func findSecondMax(arr: [Int]) -> Int {
     return second
 }
 
-findSecondMax(arr: array)
+findNthMax(arr: array)
 
 let n = 2
 let nthValue = array.sorted{$0 > $1}
-print(nthValue[n - 1])
+if n >= array.count {
+   print("Index out of range")
+}else{
+    if n == 1 {
+        print(nthValue[0])
+    }else{
+        print(nthValue[n - 1])
+    }
+}
 
 
 
